@@ -3,4 +3,4 @@
 
 Learn the story of freshwater mussels of the Mississippi River, as they endured pearl and button harvesting, habitat destruction, and competed against invasive species. 
 
-View the full story here: [cartobaldrica.github.io/where-the-naiads-go](Where the Naiads Go)
+View the full story here: [Where the Naiads Go](cartobaldrica.github.io/where-the-naiads-go)
