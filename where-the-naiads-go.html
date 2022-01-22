@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Where the Naiads Go</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,800;1,400;1,800&family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap" rel="stylesheet"> 
+
+    <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+        body{
+            
+        }
+        #title-row{
+            background:black;
+            padding-bottom:100px;
+        }
+        .row{
+            margin-bottom:50%;
+        }
+        .title-image{
+            margin:auto;
+            display:block;
+            height:100%;
+        }
+        .subtitle-image{
+            margin:auto;
+            display:block;
+        }
+        .title{
+            margin-bottom:0px;
+            padding-left:25px;
+            padding-right:25px;
+        }
+        .naiad{
+            width:100%;
+            }
+        #content{
+            overflow:visible !important;
+        }
+        .scroll-container{
+            display:block;
+        }
+        .background-item{
+            width:100%;
+            height:100%;
+            z-index:-1;
+            position:sticky;
+            display:block;
+            top:0;
+            background-repeat: no-repeat;
+            background-position: center; 
+        }
+        .foreground-item{
+            position:relative;
+        }
+        p{
+            font-size:20px;
+            font-family: 'EB Garamond', serif;
+            color:black;
+        }
+        h1{
+            font-size:30px;
+            font-family: 'EB Garamond', serif;
+            color:black;
+        }
+        h2{
+            color:white;
+            font-family: 'EB Garamond', serif;
+            font-size:20px;
+            line-height:20px;
+            margin-top:0;
+        }
+        .large{
+            font-size:30px;
+        }
+        .center{
+            text-align:center;
+        }
+        .end{
+            margin-bottom:100%;
+        }
+        .no-margin{
+            margin-bottom:0;
+        }
+        .white{
+            color:white;
+        }
+        .garamond{
+            font-family: 'EB Garamond', serif;
+        }
+        .josephin{
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .story-img{
+            display:block;
+            margin:auto;
+            width:100%;
+        }
+        .bold{
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="content" class="container-fluid">
+        <div id="title-row" class="row" style="margin-bottom:0px;">
+            <div class="col col-lg-1 col-0" ></div>
+            <div class="col col-lg-10 col-md-12 col-12" >
+                <img class="title-image" src="img/title_black.jpg">
+            </div>
+            <div class="col col-lg-1 col-0" ></div>
+        </div><div id="title-row" class="row" style="margin-bottom:300px;">
+            <div class="col col-lg-1 col-0" ></div>
+            <div class="col col-lg-10 col-md-12 col-12" >
+                <img class="subtitle-image" src="img/title_card.jpg">
+            </div>
+            <div class="col col-lg-1 col-0" ></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">The Mississippi Basin is home to more mussel species than any other freshwater basin in the world.</p>
+                <p class="large"><b>And they're dying...</b></p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene">
+                <div class="background-item" style="background-image:url(img/basin_outline-01.png);"></div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">It is estimated that <b>143</b> mussel species are native to the Mississippi Basin.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">Their names are fantastical—as colorful as their nacres:</p>
+                            <img class="story-img" src="img/mussel_sample.png">
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large center">Today, <b>15 native species are extinct</b><br/><b style="color:#ac1900">41 are endangered</b><br/><b style="color:#f7af00">2 are threatened</b></p>
+                            <img class="story-img" src="img/mussel_species-01.png">
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large end">Overall, mussel populations have declined <b>70%</b> in the last 100 years.</p>                        
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene">
+                <div class="background-item">
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-0">
+                            <img class="naiad story-img" src="img/naiad_by_tree.jpg">
+                            <p>From "The Elements" by Giulio Carpioni, 1640-60</p>
+                        </div>
+                    </div>            
+                </div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-6 col-0">
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">Metis (Anglicized: Blackfoot) mythology refers to a mussel shell as the container in which all the world's water is held.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-6 col-0">
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">Freshwater mussels have high ecological significance, providing filtration, substrate stabilization, and oxygen.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-6 col-sm-6 col-0">
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large end">When describing mussels, western scientists also turned to myth, calling them Naiads, after the enigmatic and often mischievious Greek water spirits.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">But to truly understand the plight of the Mississippi's mussels, a different form of mythmaking must be analyzed. Of the myths we tell of riches, capital, and the price of progress.</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">The story of Naiads is a story of stories, and like many stories, it begins with the promise of treasure.</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row no-margin">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <img class="story-img" src="img/pearl_title-01.png">
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene">
+                <div class="background-item" style="background-image:url(img/pearl_background-01.png); background-repeat:repeat;"></div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">When an irritant, such as a parasite, or a grain of sand, enters
+                                the shell of a freshwater mussel, the mussel forms a hard
+                                coating of nacre, otherwise known as mother of pearl, around the object. Over time, a pearl is
+                                formed.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/pearl_woman.jpg">
+                            <p>An 1870 fasion advertisment published by Currier & Ives that prominently features pearls.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" style="margin-top:50%;">In the late 19th century, pearls were considered an upretentious form of jewerly, as suitable for <a href="http://lawrencelore.blogspot.com/2016/01/queen-marys-wabash-river-pearl.html">queens</a> and <a href="https://www.loc.gov/resource/sn83030193/1908-02-15/ed-2/?sp=1&r=-0.403,0.078,1.55,0.641,0">millionaires</a> as for commoners.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">Coincidentally, in 1890, the <a href="https://babel.hathitrust.org/cgi/pt?id=uc1.31175016758917&view=1up&seq=309">average monthly wage</a> for a hired farm hand was $18.33.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">However, a single freshwater pearl could fetch anywhere from a few cents, to hundreds, even thousands of dollars. Particularly large, or colorful pearls were often announced in newspapers, sometimes several states away.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/pearl_news.png">
+                            <p>A Kansas newspaper notice of a prominent pearl sold in Pairie du Chien, Wisconsin.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">If a stretch of river became known for large pearls, such as the <a href="https://historyonthefox.wordpress.com/2018/01/09/when-the-fox-river-was-known-for-its-pearls-and-pearl-buttons/">Fox River in Illinois</a>, Pearl Rushes typically followed.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                        <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                            <img class="story-img" src="img/first_pearl_rush-01.png">
+                        </div>
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/nyt_pearl.png">
+                            <p><i>New York Times</i> <a href="https://www.nytimes.com/1902/09/28/archives/american-pearl-fisheries-give-out-large-shipments-of-clam-shells-to.html?searchResultPosition=1">article</a> from September 28, 1902.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" >The lure of pearl riches decimated local mussel populations. While some did find fortune, most pearlers switched occupations after rushes subsided.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large end">Some, however, turned to a different part of the mussel for their fortune...</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-8 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/whos_got_the_button.jpg">
+            </div>
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="row no-margin">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <img class="story-img" src="img/button_title-01.png">
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene" style="margin-bottom:500px;">
+                <div class="background-item" style="background-image:url(img/button_background-01.png); background-repeat:repeat;"></div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">According to legend, in the 1890s, a German immigrant named John Boepple
+                                cut his foot on a mussel in the Sangamom River, and then had a brilliant thought: why not use the shell to make buttons?</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/Boepple.jpg">
+                            <p><a href="http://www.encyclopediadubuque.org/index.php?title=BOEPPLE,_John">John Boepple cutting buttons</a>. Year unknown.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" >In reality, Boepple had been a button manufactuer in Germany, and was lured to the Upper Mississippi by the prospect of abundant mussel resources.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" >In 1890, with aid from the McKinley Tariff, which raised prices on imported marine mussel shells, Boepple started his own button cutting factory in
+                                Muscatine, Iowa. Within 10 years, Muscatine was the button capital
+                                of the world, housing dozens of factories, and buying
+                                shells from up and down the Mississippi.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/boepple_factory.jpg">
+                            <p>Beopple's Button Factory in Muscatine, Iowa, 1902.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                        <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                            <img class="story-img" src="img/shell_territory-01.png">
+                        </div>
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                    </div>
+                    <!--<div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/Boepple.jpg">
+                            <p><a href="http://www.encyclopediadubuque.org/index.php?title=BOEPPLE,_John">John Boepple cutting buttons</a>. Year unknown.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" ></p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>-->
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/clamshell_road.jpg">
+                            <p>4th Street, Muscatine, Iowa, paved with discarded mussel shells. 1902</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">Over 38,000 tons of shells were harvested in 1908, and the industry itself peaked in the 1910s.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                        <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                            <img class="story-img" src="img/shell_harvest-01.png">
+                        </div>
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">The industry was so vital to the economies of river towns, that when initial scientific reports suggested that mussel populations were being depleated at unsustainable rates, the U.S Department of Fisheries promised to breed and restock mussel populations themselves, rather than regulate the industry.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/quality_buttons.jpg">
+                            <p>Weber and Sons Quality Buttons, 1918</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large"><b>These efforts failed.</b></p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large end">Beopple himself struggled to compete with the rapid growth
+                                of new technology, and watched the industry surpass him.
+                                In 1911, he cut his foot on a mussel while wading in the
+                                Mississippi, and later died of infection. When the Naiads of Greek Mythology were angered, they often sought vengence. </p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">While the button industry did depelete many mussel populations, it
+                    isn't thought to have directly caused any extinctions.
+                    However, low populations made mussels more vulnerable to other human impacts...</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-8 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/tva.gif">
+            </div>
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="row no-margin">
+            <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/dams_title-01.png">
+            </div>
+            <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene" style="margin-bottom:500px;">
+                <div class="background-item" style="background-image:url(img/dams_background-01.png); background-repeat:repeat;"></div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">Prior to European colonization, mussels carpeted many rivers in the Mississippi Basin, especially the Tennessee and Cumberland.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/keouk_dam.jpg">
+                            <p>Lock and Dam No. 19, AKA the Keokuk Dam, in the 1980s.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">In 1910, construction began on Lock and Dam No. 19, otherwise known as the Keokuk Dam, in Keokuk, Iowa. The dam was first large dam construction on the main channel of the Mississippi, and one of the largest hydroelectric dams in the world at the time.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">For many years, the Ebonyshell (Fusconaia ebena) was the staple mussel of the button industry. But ebonyshells relied on the migratory skipjack shad, and only the skipjack shad, to transport their larva. The Keokuk Dam was impassible to Skipjack, and without their assistance, ebonyshell populations upstream of the dam could never replenish.</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/ebonyshell_interior_03-11-1.jpg">
+                            <p>Interior of an Ebonyshell (Fusconaia ebena).</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">But the most catastrophic effect of dams on mussel populations is their fundamental alteration of habitats. Changing temperatures and reducing flows. For sensitive mussels, these changes were often impossible to overcome.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/22electric_power_is_a_weapon_of_war22_national_archives_0.gif">
+                            <p>Tennessee Valley Authority propaganda poster from World War II</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" style="margin-top:50%;">The dam construction work of the Tennessee Valley Authority, and the similar dam building efforts it inspired across the west, changed the landscape of American waterways. And its mussels.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                        <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                            <img class="story-img" src="img/dam_growth-01.png">
+                        </div>
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">Of the <b>15 species</b> of extinct mussels in the Mississippi Basin, <b>all of them</b> were native to the Ohio, Tennessee, and Cumberland rivers in the Eastern Basin.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large end">By the 1950s, the button industry was dead, dam construction was occuring at the same breakneck pace it would for the next half-century, and freshwater mussels everywhere were paying the price of progress.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-8 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/pollutants-01.jpg">
+            </div>
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+        </div>-->
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large"> While the passage of the Clean Water Act in 1973 had some positive
+                    effect on mussel populations, these effects have done little
+                    to offset decades of habitat destruction and over-harvesting.
+                    <b>Now, a new threat has emerged.</b></p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row no-margin">
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-8 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/zebra_title-01.jpg">
+            </div>
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="scroll-container">    
+            <div class="scene" style="margin-bottom:500px;">
+                <div class="background-item" style="background-image:url(img/zebra_background-01.png); background-repeat:repeat;"></div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large">Cargo ships, staples of the global economy, often unwittingly carry passengers in their ballast water, that are then released when the water is discharged. Prior to 1996, there were no restrictions on ballast water discharge in the United States. In 1988, this lack of regulation led to the arrival of a devastating invader: the Zebra mussel.
+                                </p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/Zebra_mussel_GLERL_3.jpg">
+                            <p>Zebra mussels infesting a current meter on Lake Michigan, 2007</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large" style="margin-top:50%;">Quickly, the small opportunistic mussels reaked havoc in
+                                Lake Michigan, and quickly spread throughout the Ohio
+                                and Upper Mississippi rivers.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <p class="large">Unlike most freshwater mussels in the
+                                Mississippi, Zebra mussels attach to any hard surface they
+                                can find, be it substrate, or other mussels. Due to their massive
+                                numbers, Zebra mussels reduce the availability of nutrients
+                                and plankton in an ecosystem, causing major stress on
+                                native mussels</p>
+                        </div>
+                        <div class="col col-lg-5 col-md-6 col-sm-6 col-12">
+                            <img class="story-img" src="img/zebramussels_main.jpg">
+                            <p>Zebra mussels attached to a larger mussel.</p>
+                        </div>
+                        <div class="col col-lg-1 col-md-0 col-sm-0 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                        <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                            <img width="100%" src="img/zebra_mussel_sightings-01.png">
+                        </div>
+                        <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large"> In northern waters, Zebra mussels are devastating, in some cases extirpating already stressed native mussel populations entirely. However, Zebra mussels in southern, warmer waters may have difficulty establishing, meaning that native mussels in the southern basin may escape their effects.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                        <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                            <p class="large bold end">But for many streams, and especially lakes, there is no recourse.</p>
+                        </div>
+                        <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-8 col-md-10 col-sm-10 col-12">
+                <img class="story-img" src="img/mussel-art.jpg">
+            </div>
+            <div class="col col-lg-2 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">For freshwater mussels, the relationship between myth and reality has always been complicated. 
+                    Today, as populations continue to decline, action needs to be taken on two fronts. For one, we need continued study of mussel 
+                    declines, combined with action to spark recovery. We also need stories, old and new, to share the plight of Naiads.</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <p class="large">The final map in this story is, in itself, a story. It is a map, and about maps. It shows the impact of 
+                    freshwater mussels on the map, and suggests that these largely unseen creatures may have had an unmistakable imprint on our perceptions.</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+            <div class="col col-lg-10 col-md-10 col-sm-10 col-12">
+                <img width="100%" src="img/mussel_named_places-01.jpg">
+            </div>
+            <div class="col col-lg-1 col-md-1 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <h1><b>Authors Note:</b></h1>
+                <p>I became enamored by freshwater mussels soon after moving to La Crosse, Wisconsin, from the West Coast, in 2018. It was on a trip to a nature center in Lansing, Iowa that I learned of the button industry's vital role in the region, 
+                    and why it eventually died out. It wasn't long before I disovered the sheer variety of mussels, their hysterical names, and their imperiled status. I found what I was most drawn to were the myths and the strange tales. 
+                    Although I was only able to scratch the surface for this story, I saw commonality in each threat to mussels: all were the result of upbridled capitalist exploitation. Capitalism, particularly in America, is driven by narratives, 
+                    so it was relatively simple to uncover the stories told used to justify the harvest or death of mussels. There are so many that didn't make the cut, but I hope in the future I can highlight stories about individual rivers and their mussel populations. 
+                </p>
+                <p>-Gareth</p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+            <div class="col col-lg-6 col-md-8 col-sm-10 col-12">
+                <h1><b>Sources</b></h1>
+                <p><i>North American Freshwater Mussels: Natural History, Ecology and Conservation</i>, Wendall R. Haag, 2012</p>
+                <p><i>Great River: An Environmental History of the Upper Mississippi, 1890-1950</i>, Philip V. Scarpino, 1985</p>
+                <p><i>Washboards, Pigtoes, and Muckets: Historic Musseling in the Mississippi Watershed</i> in <b>Historical Archaeology</b>, Cheryl Claassen, 1994</p>
+                <p><i>Montana Mussels, Mythology and Ecology</i> in <b>Montana Naturalist</b> Rosalyn Lapier, 2017</p>
+                <p><i>An Historical Analysis of Mussel Propagation and Culture: Research Performed at the Fairport Biological Station</i>, James A. Pritchard, 2001</p>
+                <p><i>Conservation Status of Freshwater Mussels of the United States and Canada</i> in <b>Fisheries</b>, James D. Williams, Melvin L. Warren, Kevin S. Cummings, John L. Harris, and Richard J. Neves, 1993</p>
+                <p><i>Report of the United States Commissioner of Fisheries</i>, Hugh M. Smith, 1916</p>
+                <p><i>A Brief History of the Clamming and Pearling Industry in Prairie du Chien, Wisconsin</i>, Eric F. Temte, 1968</p>
+                <p><i>The Fresh-Water Pearls and Pearl Fisheries of the United States</i>, George F. Kunz, 1898</p>
+                <p><i>Fresh-water Mussels and Mussel Industries of the United States</i>, R.E Coker, 1919</p>
+                <p><i>Images of America: Waynesville and Wayne Township</i>, Dennis E. Dalton, 2012</p>
+                <p>Mussel Conservation Status, <a href="https://explorer.natureserve.org/">Nature Serve Explorer</a></p>
+                <p>Major Dams, <a href="https://data-usdot.opendata.arcgis.com/datasets/dams">Bureau of Transportation Services</a></p>
+                <p>North American Large Rivers, <a href="https://www.sciencebase.gov/catalog/item/4fb55df0e4b04cb937751e02">USGS ScienceBase</a></p>
+                <p>Zebra Mussel Sightings, <a href="https://nas.er.usgs.gov/viewer/omap.aspx?SpeciesID=5">USGS Non-Indigenous Aquatic Species Database</a></p>
+                <p>Watershed Boundaries, <a href="https://nrcs.app.box.com/v/huc">USGS Watershed Boundary Dataset</a></p>
+                <p>Harvesting the River, <a href="http://www.museum.state.il.us/RiverWeb/harvesting/harvest/mussels/tools_techniques/cutting_finishing.html">Illinois State Museum</a></p>
+                <p>When the Fox River was known for its pearls—and pearl buttons…, <a href="https://historyonthefox.wordpress.com/2018/01/09/when-the-fox-river-was-known-for-its-pearls-and-pearl-buttons/">History on the Fox</a></p>
+                <p>Button Blank Industry, <a href="https://encyclopediaofarkansas.net/entries/button-blank-industry-6577/">Encyclopedia of Arkansas</a></p>
+                <p>Clamming on the James, <a href="https://www.southdakotamagazine.com/clamming-on-the-james">South Dakota Magazine</a></p>
+                <p>Looking Back: River mussels made Carthage man into 'Pearl King', <a href="https://www.lebanondemocrat.com/hartsville/looking-back-river-mussels-made-carthage-man-into-pearl-king/article_79af341b-8e27-5deb-a332-2160511bc36e.html">Lebanon Democrat</a></p>
+                <p>Bluefer Purpleshell, <a href="https://nature.mdc.mo.gov/discover-nature/field-guide/bluefer-purpleshell">Missouri Department of Conservation</a></p>
+                <p>Giant Floater, <a href="https://nature.mdc.mo.gov/discover-nature/field-guide/giant-floater">Missouri Department of Conservation</a></p>
+                <p>Ebonyshell, <a href="https://nature.mdc.mo.gov/discover-nature/field-guide/ebonyshell">Missouri Department of Conservation</a></p>
+                <p>Orangefoot Pimpleback, <a href="http://www.museum.state.il.us/ismdepts/zoology/mussels/gallery.html?RollID=mussel_01&FrameID=plethobasus_cooperianus6803">Illinois State Museum</a></p>
+                <p>Rock Pocketbook, <a href="http://www.museum.state.il.us/ismdepts/zoology/mussels/gallery.html?RollID=mussel_01&FrameID=arcidens_confragosus674005a">Illinois State Museum</a></p>
+                <p>Fanshell, <a href="http://www.museum.state.il.us/ismdepts/zoology/mussels/gallery.html?RollID=mussel_01&FrameID=cyprogenia_stegariaa">Illinois State Museum</a></p>
+                <p>From "The Elements" by Giulio Carpioni, <a href="https://www.metmuseum.org/art/collection/search/350968">The MET Museum</a></p>
+                <p>Currier and Ives Fashion Advertisement, 1870, <a href="https://www.loc.gov/item/2002698835/">U.S Library of Congress</a></p>
+                <p>1900 Hays (Kansas) Free Press, <a href="https://www.loc.gov/resource/sn84029696/1900-11-10/ed-1/?sp=2&r=-1.184,-0.005,3.368,1.393,0">U.S Library of Congress</a></p>
+                <p>AMERICAN PEARL FISHERIES GIVE OUT, <a href="https://www.nytimes.com/1902/09/28/archives/american-pearl-fisheries-give-out-large-shipments-of-clam-shells-to.html?searchResultPosition=1">New York Times, 1902</a></p>
+                <p>"Who's got the button?", <a href="https://iowamuseums.pastperfectonline.com/webobject/F025B67C-D004-47F6-8D14-796881733487">Iowa Museum Assocation</a></p>
+                <p>John Beopple Cutting Buttons, <a href="http://www.encyclopediadubuque.org/index.php?title=BOEPPLE,_John">Encyclopedia Dubuque</a></p>
+                <p>Beopple Button Factory, <a href="http://www.umvphotoarchive.org/digital/collection/muspl/id/524">Upper Mississippi Valley Digital Photo Archive</a></p>
+                <p>Clamshell Road, <a href="http://www.umvphotoarchive.org/digital/collection/muspl/id/681">Upper Mississippi Valley Digital Photo Archive</a></p>
+                <p>Weber and Sons Quality Buttons, <a href="www.umvphotoarchive.org/digital/collection/muspl/id/9239">Upper Mississippi Valley Digital Photo Archive</a></p>
+                <p>Tennessee Valley Authority Posters, <a href="https://energyhistory.yale.edu/library-item/tennessee-valley-authority-world-war-ii-posters-1942-43-gallery">Yale University Energy History</a></p>
+                <p>Keokuk Dam, <a href="https://en.wikipedia.org/wiki/Lock_and_Dam_No._19#/media/File:Mississippi_River_Lock_and_Dam_No._19_rear_of_dam.jpg">Wikipedia</a></p>
+                <p>Zebra Mussels, <a href="https://extension.umn.edu/sites/extension.umn.edu/files/zebramussels_main.jpg">UMN Extension</a></p>
+                <p>Zebra Mussel Encrusted Meter, <a href="https://en.wikipedia.org/wiki/Zebra_mussel#/media/File:Zebra_mussel_GLERL_3.jpg">Wikipedia</a></p>
+                <p>Freshwater Mussel Linework, <a href="https://www.fws.gov/video/flash/kareencouchlinetarit/pages/APPALACH.htm">Kareen Couch VIA USFWS</a></p>
+            </div>
+            <div class="col col-lg-3 col-md-2 col-sm-1 col-0"></div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){  
+        var height = $(window).height();
+        $('.background-item').height(height);
+        $('.title-image').height(height);
+        var t_width = $('.title-image').width();
+        $('.subtitle-image').width(t_width);
+        
+        var naiad = $('.naiad').height();
+        var n_padding = (height - naiad)/2;
+        $('.naiad').css("padding-top",n_padding);
+
+        var b_itemHeights = [];
+        var f_itemHeights = [];
+        var s_itemHeights = [];
+        var b_items = $(".background-item");
+        var f_items = $(".foreground-item");
+        var oldIndex;
+        var index;
+
+        var scenes = $(".scene");
+
+        for (var i = 0; i < b_items.length; i++){
+            b_itemHeights[i] = $(b_items[i]).height();
+            f_itemHeights[i] = $(f_items[i]).height() + $(f_items[i]).offset().top;
+            s_itemHeights[i] = $(scenes[i]).offset().top;
+        }
+
+        $(document).scroll(function(){
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+        });
+
+        function floatScroll(){
+            $(b_items[index]).css("position","fixed").css("top",0);
+        }
+        
+        function checkScroll(elem){
+            if (isScrolledIntoView(elem)){
+                var pos = $(elem).position();
+
+                //$(elem).css("position","absolute");
+            }
+            else{
+                $(elem).css("position","block");
+            }   
+        }
+
+        function isScrolledIntoView1(elem){
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+
+            return ((elemTop >= docViewTop) && (elemBottom <= docViewBottom));
+        }
+        function isScrolledIntoView2(elem){
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+
+            var elemTop = $(elem).offset().top;
+            var elemBottom = elemTop + $(elem).height();
+
+            return ((elemBottom <= docViewBottom));
+        }
+    })
+    $(window).resize(function(){
+        var height = $(window).height();
+        $('.background-item').height(height);
+        $('.title-image').height(height);
+        var t_width = $('.title-image').width();
+        $('.subtitle-image').width(t_width);
+
+        var naiad = $('.naiad').height();
+        var n_padding = (height - naiad)/2;
+        $('.naiad').css("padding-top",n_padding);
+    });
+
+</script>
+</body>
+</html>
